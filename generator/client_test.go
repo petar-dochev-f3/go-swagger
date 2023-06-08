@@ -396,9 +396,13 @@ func TestGenClient_2945(t *testing.T) {
 	require.NoError(t, err)
 
 	fixtureConfig := map[string][]string{
-		"client/operations/get_version_responses.go": { // generated file
+		"client/operations/fetch_version_responses.go": { // generated file
 			// expected code lines
-			`return nil, runtime.NewAPIError("[GET /version] getVersion", response, response.Code())`,
+			`return nil, runtime.NewAPIError("[GET /version] fetch-version", response, response.Code())`,
+		},
+		"client/operations/get_temperature_responses.go": { // generated file
+			// expected code lines
+			`return nil, runtime.NewAPIError("[GET /temperature] GetTemperature", response, response.Code())`,
 		},
 	}
 

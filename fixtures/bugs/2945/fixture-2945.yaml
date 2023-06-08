@@ -3,9 +3,19 @@ info:
   title: foo api
   version: "1.0.0"
 paths:
+  # operationId will be used as operation name
   /version:
     get:
-      operationId: getVersion
+      operationId: fetch-version
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: string
+
+  # no operationId - default operation name will be constructed            
+  /temperature:
+    get:
       responses:
         "200":
           description: Success
